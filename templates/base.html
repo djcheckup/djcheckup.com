@@ -1,0 +1,8 @@
+{% extends '_base.html' %}
+
+{% block main %}
+    <main role="main" class="container">
+        {% include 'snippets/messages.html' %}
+        {% block content %}{% endblock content %}
+    </main>
+{% endblock main %}

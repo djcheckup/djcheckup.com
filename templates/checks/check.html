@@ -1,0 +1,38 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+
+{% block title %}
+DJ Checkup
+{% endblock title %}
+
+
+{% block content %}
+
+{% if not job_id %}
+    {% include 'checks/url_form.html' %}
+{% endif %}
+
+
+{% if job_id %}
+<div id="app">
+    <h3>Progress</h3>
+    <p id="current_status"></p>
+    <div class="progress" style="height: 30px;">
+        <div id="progressbar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div id="completed_status" class="mt-3"></div>
+</div>
+{% endif %}
+
+{% endblock content %}
+
+
+{% block body_close %}
+    {% if job_id %}
+    <script>
+        status_url = "{% url 'checks:check_status' job_id %}";
+    </script>
+    <script src="{% static 'js/progress.js' %}"></script>
+    {% endif %}
+{% endblock body_close %}

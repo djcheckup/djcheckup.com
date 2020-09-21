@@ -1,0 +1,33 @@
+{% extends 'navbar.html' %}
+
+{% block title %}
+DJ Checkup - Check your Django site for security errors
+{% endblock title %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <h3 class="mt-3">Get started!</h3>
+        <p>Run a security check on your Django site by submitting the URL in the input field below...</p>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-8 offset-md-2">
+{% include 'checks/url_form.html' %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <h3 class="mt-3">What will this do?</h3>
+        <p>This will run a bunch of checks over your Django site, looking for common security mistakes and ensuring your site aligns to best-practices.</p>
+        <p>We check that your site is using HTTPS, that DEBUG hasn't been left enabled, and that the admin site is not wide open. We also look for some securtiy headers that are recommended to be configured.</p>
+        <p>For more details on the checks we run, see the <a href="{% url 'website:about' %}">About page</a> for details.</p>
+        <h3 class="mt-3">Notes...</h3>
+        <p>We save your results and give you a unique URL to view them, but we don't publicise the individual checks and don't collect any further details. We retain the results of all checks for anonymised reporting purposes, but your unique URL will only be valid for 2 weeks.</p>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Scan your Django site for security errors with DJ Checkup.">
+
+    {% block head_start %}{% endblock head_start %}
+
+    <!-- Bootstrap CSS -->
+    <link href="{% static "css/darkly.min.css" %}" rel="stylesheet">
+    {% comment %} <link href="{% static "css/flatly.min.css" %}" rel="stylesheet"> {% endcomment %}
+    <!-- Custom CSS -->
+    <link href="{% static "css/styles.css" %}" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}" />
+
+    <title>{% block title %}{% endblock title %}</title>
+    {% block head_end %}{% endblock head_end %}
+</head>
+<body class="{% block body_class %}{% endblock body_class %}">
+
+    {% block navbar %}{% endblock navbar %}
+
+    {% block main %}{% endblock main %}
+
+    {% block footer %}{% endblock footer %}
+
+    {% block body_close %}{% endblock body_close %}
+
+    </body>
+</html>

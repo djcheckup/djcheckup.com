@@ -1,0 +1,34 @@
+/* staatliches-regular - latin */
+@font-face {
+  font-family: "Staatliches";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Staatliches Regular"), local("Staatliches-Regular"),
+    url("../fonts/staatliches-v3-latin-regular.woff2") format("woff2"),
+    url("../fonts/staatliches-v3-latin-regular.woff") format("woff");
+}
+
+body {
+  font-size: 1.2em;
+}
+
+canvas {
+  width: 176px !important;
+  height: 140px !important;
+}
+
+a.navbar-brand,
+a.nav-link,
+h1,
+h3 {
+  font-family: "Staatliches";
+  font-weight: 400;
+}
+
+a.navbar-brand {
+  font-size: 3em;
+}
+
+a.nav-link {
+  font-size: 2em;
+}

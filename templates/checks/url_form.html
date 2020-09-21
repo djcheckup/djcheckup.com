@@ -1,0 +1,13 @@
+<div class="card text-center">
+  <div class="card-body">
+    <form action="{% url 'checks:check' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.url }}
+        </div>
+        <button class="btn btn-lg btn-success" type="submit" id="submit">
+            Run a checkup on my site
+        </button>
+    </form>
+  </div>
+</div>
