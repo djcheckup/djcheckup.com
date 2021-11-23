@@ -9,7 +9,7 @@ Source code for the [DJ Checkup website](https://djcheckup.com)
 - Clone the repository
 - Create the virtual environment
 - Pip install the requirements
-- Create the .env file from the env.template
+- Create the .env file from the env.template (optional)
 - Run the migrations
 
 ```bash
@@ -34,8 +34,20 @@ mkdir staticfiles
 python manage.py collectstatic
 ```
 
-- Run the server
+- Run the server to get the website up
 
 ```bash
 python manage.py runserver
+```
+
+- To submit URLS to be checked, you need a Redis server. Configure one in the .env file, or just run a local Redis Docker container for testing:
+
+```bash
+docker run --name local-redis -d redis
+```
+
+- Then run the Django-RQ worker in a second terminal window (make sure the same virtual environment is activated in the new window):
+
+```bash
+python manage.py rqworker checks
 ```
